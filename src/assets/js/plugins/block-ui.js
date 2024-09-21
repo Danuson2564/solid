@@ -2,7 +2,7 @@ $(function () {
   $(".block-card").on("click", function () {
     var block_ele = $(this).closest(".card");
     $(block_ele).block({
-      message: '<i className="ti ti-refresh text-white fs-5"></i>',
+      message: '<i class="ti ti-refresh text-white fs-5"></i>',
       timeout: 2000, //unblock after 2 seconds
       overlayCSS: {
         backgroundColor: "#000",
@@ -21,7 +21,7 @@ $(function () {
   $(".block-sidenav").on("click", function () {
     var block_ele = $(".side-mini-panel");
     $(block_ele).block({
-      message: '<i className="ti ti-refresh text-white fs-5"></i>',
+      message: '<i class="ti ti-refresh text-white fs-5"></i>',
       timeout: 2000, //unblock after 2 seconds
       overlayCSS: {
         backgroundColor: "#000",
@@ -39,7 +39,7 @@ $(function () {
   // Block page
   $(".block-default").on("click", function () {
     $.blockUI({
-      message: '<i className="ti ti-refresh text-white fs-5"></i>',
+      message: '<i class="ti ti-refresh text-white fs-5"></i>',
       timeout: 2000, //unblock after 2 seconds
       overlayCSS: {
         backgroundColor: "#000",
@@ -57,7 +57,7 @@ $(function () {
   // onBlock callback
   $(".onblock").on("click", function () {
     $.blockUI({
-      message: '<i className="ti ti-refresh text-white fs-5"></i>',
+      message: '<i class="ti ti-refresh text-white fs-5"></i>',
       fadeIn: 1000,
       timeout: 2000, //unblock after 2 seconds
       overlayCSS: {
@@ -80,7 +80,7 @@ $(function () {
   // onUnblock callback
   $(".onunblock").on("click", function () {
     $.blockUI({
-      message: '<i className="ti ti-refresh text-white fs-5"></i>',
+      message: '<i class="ti ti-refresh text-white fs-5"></i>',
       timeout: 2000, //unblock after 2 seconds
       overlayCSS: {
         backgroundColor: "#000",
@@ -102,7 +102,7 @@ $(function () {
   // Overlay callback
   $(".onoverlay-click").on("click", function () {
     $.blockUI({
-      message: '<i className="ti ti-refresh text-white fs-5"></i>',
+      message: '<i class="ti ti-refresh text-white fs-5"></i>',
       overlayCSS: {
         backgroundColor: "#000",
         opacity: 0.5,
@@ -141,7 +141,7 @@ $(function () {
   $(".without-overlay").on("click", function () {
     var block_ele = $(this).closest(".card");
     $(block_ele).block({
-      message: '<i className="ti ti-refresh text-white fs-5"></i>',
+      message: '<i class="ti ti-refresh text-white fs-5"></i>',
       showOverlay: false,
       timeout: 2000, //unblock after 2 seconds
       css: {
@@ -160,7 +160,7 @@ $(function () {
   $(".overlay-unblock").on("click", function () {
     var block_ele = $(this).closest(".card");
     $(block_ele).block({
-      message: '<i className="ti ti-refresh text-white fs-5"></i>',
+      message: '<i class="ti ti-refresh text-white fs-5"></i>',
       overlayCSS: {
         backgroundColor: "#000",
         opacity: 0.5,

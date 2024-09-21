@@ -470,7 +470,7 @@
   // Clear Toast Button
   $("#clear-toast-btn").on("click", function () {
     toastr.error(
-      'Clear itself?<br /><br /><button type="button" className="btn btn-secondary clear">Yes</button>',
+      'Clear itself?<br /><br /><button type="button" class="btn btn-secondary clear">Yes</button>',
       "Clear Toast Button"
     );
   });

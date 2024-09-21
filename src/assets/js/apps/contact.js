@@ -116,30 +116,30 @@ $(function () {
       var cdate = dd + mm + time;
 
       $html =
-        '<tr className="search-items">' +
+        '<tr class="search-items">' +
         "<td>" +
-        '<div className="n-chk align-self-center text-center">' +
-        '<div className="form-check">' +
-        '<input type="checkbox" className="form-check-input contact-chkbox primary" id="' +
+        '<div class="n-chk align-self-center text-center">' +
+        '<div class="form-check">' +
+        '<input type="checkbox" class="form-check-input contact-chkbox primary" id="' +
         cdate +
         '">' +
-        '<label className="form-check-label" for="' +
+        '<label class="form-check-label" for="' +
         cdate +
         '"></label>' +
         "</div>" +
         "</div>" +
         "</td>" +
         "<td>" +
-        '<div className="d-flex align-items-center">' +
-        '<img src="../assets/images/profile/user-1.jpg" alt="avatar" className="rounded-circle" width="35">' +
-        '<div className="ms-3">' +
-        '<div className="user-meta-info">' +
-        '<h6 className="user-name mb-0" data-name=' +
+        '<div class="d-flex align-items-center">' +
+        '<img src="../assets/images/profile/user-1.jpg" alt="avatar" class="rounded-circle" width="35">' +
+        '<div class="ms-3">' +
+        '<div class="user-meta-info">' +
+        '<h6 class="user-name mb-0" data-name=' +
         $_nameValue +
         ">" +
         $_nameValue +
         "</h6>" +
-        '<span className="user-work fs-3" data-occupation=' +
+        '<span class="user-work fs-3" data-occupation=' +
         $_occupationValue +
         ">" +
         $_occupationValue +
@@ -149,30 +149,30 @@ $(function () {
         "</div>" +
         "</td>" +
         "<td>" +
-        '<span className="usr-email-addr" data-email=' +
+        '<span class="usr-email-addr" data-email=' +
         $_emailValue +
         ">" +
         $_emailValue +
         "</span>" +
         "</td>" +
         "<td>" +
-        '<span className="usr-location" data-location=' +
+        '<span class="usr-location" data-location=' +
         $_locationValue +
         ">" +
         $_locationValue +
         "</span>" +
         "</td>" +
         "<td>" +
-        '<span className="usr-ph-no" data-phone=' +
+        '<span class="usr-ph-no" data-phone=' +
         $_phoneValue +
         ">" +
         $_phoneValue +
         "</span>" +
         "</td>" +
         "<td>" +
-        '<div className="action-btn">' +
-        '<a href="javascript:void(0)" className="text-info edit"><i className="ti ti-eye fs-5"></i></a>' +
-        '<a href="javascript:void(0)" className="text-dark delete ms-2"><i className="ti ti-trash fs-5"></i></a>' +
+        '<div class="action-btn">' +
+        '<a href="javascript:void(0)" class="text-info edit"><i class="ti ti-eye fs-5"></i></a>' +
+        '<a href="javascript:void(0)" class="text-dark delete ms-2"><i class="ti ti-trash fs-5"></i></a>' +
         "</div>" +
         "</td>" +
         "</tr>";

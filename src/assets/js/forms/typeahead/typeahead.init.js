@@ -378,7 +378,7 @@ $("#multiple-datasets .typeahead").typeahead(
     display: "team",
     source: nbaTeams,
     templates: {
-      header: '<h3 className="league-name">NBA Teams</h3>',
+      header: '<h3 class="league-name">NBA Teams</h3>',
     },
   },
   {
@@ -386,7 +386,7 @@ $("#multiple-datasets .typeahead").typeahead(
     display: "team",
     source: nhlTeams,
     templates: {
-      header: '<h3 className="league-name">NHL Teams</h3>',
+      header: '<h3 class="league-name">NHL Teams</h3>',
     },
   }
 );

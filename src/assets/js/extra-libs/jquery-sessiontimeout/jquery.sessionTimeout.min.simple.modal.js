@@ -51,24 +51,24 @@
       i = e.extend(r, t);
     }
     e("body").append(
-      '<div className="modal fade" id="sessionTimeout-dialog">' +
-        '<div className="modal-dialog">' +
-        '<div className="modal-content">' +
-        '<div className="modal-header">' +
-        '<button type="button" className="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
-        '<h4 className="modal-title">' +
+      '<div class="modal fade" id="sessionTimeout-dialog">' +
+        '<div class="modal-dialog">' +
+        '<div class="modal-content">' +
+        '<div class="modal-header">' +
+        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
+        '<h4 class="modal-title">' +
         i.title +
         "</h4>" +
         "</div>" +
-        '<div className="modal-body">' +
+        '<div class="modal-body">' +
         i.message +
         "</div>" +
-        '<div className="modal-footer">' +
-        '<div className="btn-group">' +
-        '<button id="sessionTimeout-dialog-logout" type="button" className="btn btn-danger">' +
+        '<div class="modal-footer">' +
+        '<div class="btn-group">' +
+        '<button id="sessionTimeout-dialog-logout" type="button" class="btn btn-danger">' +
         i.logoutBtn +
         "</button>" +
-        '<button id="sessionTimeout-dialog-keepalive" type="button" className="btn btn-success" data-dismiss="modal">' +
+        '<button id="sessionTimeout-dialog-keepalive" type="button" class="btn btn-success" data-dismiss="modal">' +
         i.stayConnectedBtn +
         "</button>" +
         "</div>" +

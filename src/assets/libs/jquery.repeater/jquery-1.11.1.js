@@ -1100,7 +1100,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 	// Check if getElementsByClassName can be trusted
 	support.getElementsByClassName = rnative.test( doc.getElementsByClassName ) && assert(function( div ) {
-		div.innerHTML = "<div className='a'></div><div className='a i'></div>";
+		div.innerHTML = "<div class='a'></div><div class='a i'></div>";
 
 		// Support: Safari<4
 		// Catch class over-caching

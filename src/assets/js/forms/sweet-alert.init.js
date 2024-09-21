@@ -84,9 +84,9 @@
         showCloseButton: true,
         showCancelButton: true,
         focusConfirm: false,
-        confirmButtonText: '<i className="ti ti-thumb-up"></i> Great!',
+        confirmButtonText: '<i class="ti ti-thumb-up"></i> Great!',
         confirmButtonAriaLabel: "Thumbs up, great!",
-        cancelButtonText: '<i className="ti ti-thumb-down"></i>',
+        cancelButtonText: '<i class="ti ti-thumb-down"></i>',
         cancelButtonAriaLabel: "Thumbs down",
       });
     });
@@ -314,16 +314,16 @@
         title: "Auto close alert!",
         html:
           "I will close in <strong></strong> seconds.<br/><br/>" +
-          '<button id="increase" className="btn bg-warning-subtle text-warning px-4">' +
+          '<button id="increase" class="btn bg-warning-subtle text-warning px-4">' +
           "I need 5 more seconds!" +
           "</button><br/>" +
-          '<button id="stop" className="btn bg-danger-subtle text-danger px-4 mt-1">' +
+          '<button id="stop" class="btn bg-danger-subtle text-danger px-4 mt-1">' +
           "Please stop the timer!!" +
           "</button><br/>" +
-          '<button id="resume" className="btn bg-success-subtle text-success px-4 mt-1" disabled>' +
+          '<button id="resume" class="btn bg-success-subtle text-success px-4 mt-1" disabled>' +
           "Phew... you can restart now!" +
           "</button><br/>" +
-          '<button id="toggle" className="btn bg-primary-subtle text-primary px-4 mt-1">' +
+          '<button id="toggle" class="btn bg-primary-subtle text-primary px-4 mt-1">' +
           "Toggle" +
           "</button>",
         timer: 10000,

@@ -1,22 +1,32 @@
-import iconDdChat from "../assets/images/svgs/icon-dd-chat.svg";
-import { darklLogo, lightLogo } from "../helper/icon";
-export default function Header() {
+import { darklLogo, iconAccount, iconDdApplication, iconDdCart, iconDdChat, iconDdDate, iconDdInvoice, iconDdLifebuoy, iconDdMessageBox, iconDdMobile, iconFlagCn, iconFlagEn, iconFlagFr, iconFlagSa, iconInbox, iconTasks, lightLogo } from "../helper/icon";
+import { createSignal } from "solid-js";
+import User1 from "../assets/images/profile/user-1.jpg";
+import UnlimitedBg from "../assets/images/backgrounds/unlimited-bg.png";
+export default function Header(props) {
+  const [isOpenToggleHeader, setIsOpenToggleHeader] = createSignal(false);
+  const [isOpenOffcanvas, setIsOpenOpenOffcanvas] = createSignal(false);
+
+  const toggleHeader = () => {
+    setIsOpenToggleHeader(!isOpenToggleHeader());
+  };
+  const toggleOffcanvas = () => {
+    setIsOpenOpenOffcanvas(!isOpenOffcanvas());
+  };
+  console.log(isOpenToggleHeader)
   return (
     <>
       <header className="topbar">
         <div className="with-vertical">
-          {/* ---------------------------------- */}
-          {/* Start Vertical Layout Header */}
-          {/* ---------------------------------- */}
           <nav className="navbar navbar-expand-lg p-0">
             <ul className="navbar-nav">
-              <li className="nav-item nav-icon-hover-bg rounded-circle ms-n2">
+              <li class="nav-item nav-icon-hover-bg rounded-circle ms-n2">
                 <a
-                  className="nav-link sidebartoggler"
+                  class="nav-link sidebartoggler"
                   id="headerCollapse"
-                  href="javascript:void(0)"
+                  href="#"
+                  onClick={props.toggleNavbar} // เรียกฟังก์ชัน toggleNavbar เมื่อกดปุ่ม
                 >
-                  <i className="ti ti-menu-2" />
+                  <i class="ti ti-menu-2" />
                 </a>
               </li>
               <li className="nav-item nav-icon-hover-bg rounded-circle d-none d-lg-flex">
@@ -31,9 +41,6 @@ export default function Header() {
               </li>
             </ul>
             <ul className="navbar-nav quick-links d-none d-lg-flex align-items-center">
-              {/* ------------------------------- */}
-              {/* start apps Dropdown */}
-              {/* ------------------------------- */}
               <li className="nav-item nav-icon-hover-bg rounded w-auto dropdown d-none d-lg-block mx-0">
                 <div className="hover-dd">
                   <a className="nav-link" href="javascript:void(0)">
@@ -57,6 +64,7 @@ export default function Header() {
                                     <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                       <img
                                         src="../assets/images/svgs/icon-dd-chat.svg"
+                                        // src={iconDdChat}
                                         alt="flexy-img"
                                         className="img-fluid"
                                         width="24"
@@ -148,7 +156,7 @@ export default function Header() {
                                   >
                                     <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                       <img
-                                        src="../assets/images/svgs/icon-dd-cart.svg"
+                                        src={iconDdCart}
                                         alt="flexy-img"
                                         className="img-fluid"
                                         width="24"
@@ -170,7 +178,7 @@ export default function Header() {
                                   >
                                     <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                       <img
-                                        src="../assets/images/svgs/icon-dd-date.svg"
+                                        src={iconDdDate}
                                         alt="flexy-img"
                                         className="img-fluid"
                                         width="24"
@@ -192,7 +200,7 @@ export default function Header() {
                                   >
                                     <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                       <img
-                                        src="../assets/images/svgs/icon-dd-lifebuoy.svg"
+                                        src={iconDdLifebuoy}
                                         alt="flexy-img"
                                         className="img-fluid"
                                         width="24"
@@ -214,7 +222,7 @@ export default function Header() {
                                   >
                                     <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                       <img
-                                        src="../assets/images/svgs/icon-dd-application.svg"
+                                        src={iconDdApplication}
                                         alt="flexy-img"
                                         className="img-fluid"
                                         width="24"
@@ -246,7 +254,9 @@ export default function Header() {
                             </div>
                             <div className="col-4">
                               <div className="d-flex justify-content-end pe-4">
-                                <button className="btn btn-primary">Check</button>
+                                <button className="btn btn-primary">
+                                  Check
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -319,9 +329,7 @@ export default function Header() {
                   </div>
                 </div>
               </li>
-              {/* ------------------------------- */}
-              {/* end apps Dropdown */}
-              {/* ------------------------------- */}
+
               <li className="nav-item dropdown-hover d-none d-lg-block">
                 <a className="nav-link" href="../horizontal/app-chat.html">
                   Chat
@@ -339,7 +347,10 @@ export default function Header() {
               </li>
             </ul>
             <div className="d-block d-lg-none py-4">
-              <a href="../horizontal/index.html" className="text-nowrap logo-img">
+              <a
+                href="../horizontal/index.html"
+                className="text-nowrap logo-img"
+              >
                 <img
                   src={darklLogo}
                   className="dark-logo"
@@ -355,8 +366,10 @@ export default function Header() {
               </a>
             </div>
             <a
-              className="navbar-toggler nav-icon-hover-bg rounded-circle p-0 mx-0 border-0"
-              href="javascript:void(0)"
+              // className="navbar-toggler nav-icon-hover-bg rounded-circle p-0 mx-0 border-0 collapsed"
+              class={isOpenToggleHeader() ? "navbar-toggler nav-icon-hover-bg rounded-circle p-0 mx-0 border-0" : "navbar-toggler nav-icon-hover-bg rounded-circle p-0 mx-0 border-0 collapsed"}
+              // href="javascript:void(0)"
+              onClick={toggleHeader}
               data-bs-toggle="collapse"
               data-bs-target="#navbarNav"
               aria-controls="navbarNav"
@@ -366,12 +379,15 @@ export default function Header() {
               <i className="ti ti-dots fs-7" />
             </a>
             <div
-              className="collapse navbar-collapse justify-content-end"
+              // className="navbar-collapse justify-content-end collapse show"
+              // className="navbar-collapse justify-content-end collapse"
+              class={isOpenToggleHeader() ? "navbar-collapse justify-content-end collapse show" : "navbar-collapse justify-content-end collapse "}
               id="navbarNav"
             >
               <div className="d-flex align-items-center justify-content-between">
                 <a
-                  href="javascript:void(0)"
+                  // href="javascript:void(0)"
+                  // onClick={toggleOffcanvas}
                   className="nav-link nav-icon-hover-bg rounded-circle mx-0 ms-n1 d-flex d-lg-none align-items-center justify-content-center"
                   type="button"
                   data-bs-toggle="offcanvas"
@@ -381,23 +397,26 @@ export default function Header() {
                   <i className="ti ti-align-justified fs-7" />
                 </a>
                 <ul className="navbar-nav flex-row ms-auto align-items-center justify-content-center">
-                  {/* ------------------------------- */}
-                  {/* start language Dropdown */}
-                  {/* ------------------------------- */}
                   <li className="nav-item nav-icon-hover-bg rounded-circle">
                     <a
                       className="nav-link moon dark-layout"
                       href="javascript:void(0)"
                       style={{ display: "flex" }}
                     >
-                      <i className="ti ti-moon moon" style={{ display: "flex" }} />
+                      <i
+                        className="ti ti-moon moon"
+                        style={{ display: "flex" }}
+                      />
                     </a>
                     <a
                       className="nav-link sun light-layout"
                       href="javascript:void(0)"
                       style={{ display: "none" }}
                     >
-                      <i className="ti ti-sun sun" style={{ display: "none" }} />
+                      <i
+                        className="ti ti-sun sun"
+                        style={{ display: "none" }}
+                      />
                     </a>
                   </li>
                   <li className="nav-item nav-icon-hover-bg rounded-circle dropdown">
@@ -408,7 +427,8 @@ export default function Header() {
                       aria-expanded="false"
                     >
                       <img
-                        src="../assets/images/svgs/icon-flag-en.svg"
+                        // src={iconFlagEn}
+                        src={iconFlagEn}
                         alt="flexy-img"
                         width="20px"
                         height="20px"
@@ -426,7 +446,7 @@ export default function Header() {
                         >
                           <div className="position-relative">
                             <img
-                              src="../assets/images/svgs/icon-flag-en.svg"
+                              src={iconFlagEn}
                               alt="flexy-img"
                               width="20px"
                               height="20px"
@@ -441,7 +461,7 @@ export default function Header() {
                         >
                           <div className="position-relative">
                             <img
-                              src="../assets/images/svgs/icon-flag-cn.svg"
+                              src={iconFlagCn}
                               alt="flexy-img"
                               width="20px"
                               height="20px"
@@ -456,7 +476,7 @@ export default function Header() {
                         >
                           <div className="position-relative">
                             <img
-                              src="../assets/images/svgs/icon-flag-fr.svg"
+                              src={iconFlagFr}
                               alt="flexy-img"
                               width="20px"
                               height="20px"
@@ -471,7 +491,7 @@ export default function Header() {
                         >
                           <div className="position-relative">
                             <img
-                              src="../assets/images/svgs/icon-flag-sa.svg"
+                              src={iconFlagSa}
                               alt="flexy-img"
                               width="20px"
                               height="20px"
@@ -483,12 +503,6 @@ export default function Header() {
                       </div>
                     </div>
                   </li>
-                  {/* ------------------------------- */}
-                  {/* end language Dropdown */}
-                  {/* ------------------------------- */}
-                  {/* ------------------------------- */}
-                  {/* start shopping cart Dropdown */}
-                  {/* ------------------------------- */}
                   <li className="nav-item nav-icon-hover-bg rounded-circle">
                     <a
                       className="nav-link position-relative"
@@ -503,12 +517,6 @@ export default function Header() {
                       </span>
                     </a>
                   </li>
-                  {/* ------------------------------- */}
-                  {/* end shopping cart Dropdown */}
-                  {/* ------------------------------- */}
-                  {/* ------------------------------- */}
-                  {/* start notification Dropdown */}
-                  {/* ------------------------------- */}
                   <li className="nav-item nav-icon-hover-bg rounded-circle dropdown">
                     <a
                       className="nav-link position-relative"
@@ -726,600 +734,281 @@ export default function Header() {
                   {/* ------------------------------- */}
                   {/* start profile Dropdown */}
                   {/* ------------------------------- */}
-                  <li className="nav-item dropdown">
-                    <a
-                      className="nav-link pe-0"
-                      href="javascript:void(0)"
-                      id="drop1"
-                      aria-expanded="false"
-                    >
-                      <div className="d-flex align-items-center">
-                        <div className="user-profile-img">
-                          <img
-                            src="../assets/images/profile/user-1.jpg"
-                            className="rounded-circle"
-                            width="35"
-                            height="35"
-                            alt="flexy-img"
-                          />
+                  <li class="nav-item dropdown">
+                    <a class="nav-link pe-0" href="javascript:void(0)" id="drop1" aria-expanded="false">
+                      <div class="d-flex align-items-center">
+                        <div class="user-profile-img">
+                          <img src={User1} class="rounded-circle" width="35" height="35" alt="flexy-img" />
+                          {/* <img src="../assets/images/profile/user-1.jpg" class="rounded-circle" width="35" height="35" alt="flexy-img" /> */}
                         </div>
                       </div>
                     </a>
-                    <div
-                      className="dropdown-menu content-dd dropdown-menu-end dropdown-menu-animate-up"
-                      aria-labelledby="drop1"
-                    >
-                      <div
-                        className="profile-dropdown position-relative"
-                        data-simplebar="init"
-                      >
-                        <div
-                          className="simplebar-wrapper"
-                          style={{ margin: "0px" }}
-                        >
-                          <div className="simplebar-height-auto-observer-wrapper">
-                            <div className="simplebar-height-auto-observer" />
+                    <div class="dropdown-menu content-dd dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop1">
+                      <div class="profile-dropdown position-relative" data-simplebar="init">
+                        <div class="simplebar-wrapper" style={{ "margin": "0px" }}>
+                          <div class="simplebar-height-auto-observer-wrapper">
+                            <div class="simplebar-height-auto-observer">
+                            </div>
                           </div>
-                          <div className="simplebar-mask">
-                            <div
-                              className="simplebar-offset"
-                              style={{ right: "0px", bottom: "0px" }}
-                            >
-                              <div
-                                className="simplebar-content-wrapper"
-                                tabindex="0"
-                                role="region"
-                                aria-label="scrollable content"
-                                style={{ height: "auto", overflow: "hidden" }}
-                              >
-                                <div
-                                  className="simplebar-content"
-                                  style={{ padding: "0px" }}
-                                >
-                                  <div className="py-3 px-7 pb-0">
-                                    <h5 className="mb-0 fs-5 fw-semibold">
-                                      User Profile
-                                    </h5>
+                          <div class="simplebar-mask">
+                            <div class="simplebar-offset" style={{ "right": "0px", "bottom": "0px" }}>
+                              <div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style={{ "height": "auto", "overflow": "hidden" }}>
+                                <div class="simplebar-content" style={{ "padding": "0px" }}>
+                                  <div class="py-3 px-7 pb-0">
+                                    <h5 class="mb-0 fs-5 fw-semibold">User Profile</h5>
                                   </div>
-                                  <div className="d-flex align-items-center py-9 mx-7 border-bottom">
-                                    <img
-                                      src="../assets/images/profile/user-1.jpg"
-                                      className="rounded-circle"
-                                      width="80"
-                                      height="80"
-                                      alt="flexy-img"
-                                    />
-                                    <div className="ms-3">
-                                      <h5 className="mb-1 fs-4">Johnathan Doe</h5>
-                                      <span className="mb-1 d-block">
-                                        Administrator
-                                      </span>
-                                      <p className="mb-0 d-flex align-items-center gap-2">
-                                        <i className="ti ti-mail fs-4" />{" "}
-                                        info@flexy.com
-                                      </p>
+                                  <div class="d-flex align-items-center py-9 mx-7 border-bottom">
+                                    <img src={User1} class="rounded-circle" width="80" height="80" alt="flexy-img" />
+                                    <div class="ms-3">
+                                      <h5 class="mb-1 fs-4">Johnathan Doe</h5>
+                                      <span class="mb-1 d-block">Administrator</span>
+                                      <p class="mb-0 d-flex align-items-center gap-2">
+                                        <i class="ti ti-mail fs-4" />info@flexy.com</p>
                                     </div>
                                   </div>
-                                  <div className="message-body">
-                                    <a
-                                      href="../horizontal/page-user-profile.html"
-                                      className="py-8 px-7 mt-8 d-flex align-items-center"
-                                    >
-                                      <span className="d-flex align-items-center justify-content-center text-bg-light rounded-1 p-6">
-                                        <img
-                                          src="../assets/images/svgs/icon-account.svg"
-                                          alt="flexy-img"
-                                          width="24"
-                                          height="24"
-                                        />
+                                  <div class="message-body">
+                                    <a href="../horizontal/page-user-profile.html" class="py-8 px-7 mt-8 d-flex align-items-center">
+                                      <span class="d-flex align-items-center justify-content-center text-bg-light rounded-1 p-6">
+                                        <img src={iconAccount} alt="flexy-img" width="24" height="24" />
                                       </span>
-                                      <div className="w-100 ps-3">
-                                        <h6 className="mb-0 fs-4 lh-base">
-                                          My Profile
-                                        </h6>
-                                        <span className="fs-3 d-block text-body-secondary">
-                                          Account Settings
-                                        </span>
+                                      <div class="w-100 ps-3">
+                                        <h6 class="mb-0 fs-4 lh-base">My Profile</h6>
+                                        <span class="fs-3 d-block text-body-secondary">Account Settings</span>
                                       </div>
                                     </a>
-                                    <a
-                                      href="../horizontal/app-email.html"
-                                      className="py-8 px-7 d-flex align-items-center"
-                                    >
-                                      <span className="d-flex align-items-center justify-content-center text-bg-light rounded-1 p-6">
-                                        <img
-                                          src="../assets/images/svgs/icon-inbox.svg"
-                                          alt="flexy-img"
-                                          width="24"
-                                          height="24"
-                                        />
+                                    <a href="../horizontal/app-email.html" class="py-8 px-7 d-flex align-items-center">
+                                      <span class="d-flex align-items-center justify-content-center text-bg-light rounded-1 p-6">
+                                        <img src={iconInbox} alt="flexy-img" width="24" height="24" />
                                       </span>
-                                      <div className="w-100 ps-3">
-                                        <h6 className="mb-0 fs-4 lh-base">
-                                          My Inbox
-                                        </h6>
-                                        <span className="fs-3 d-block text-body-secondary">
-                                          Messages &amp; Emails
-                                        </span>
+                                      <div class="w-100 ps-3">
+                                        <h6 class="mb-0 fs-4 lh-base">My Inbox</h6>
+                                        <span class="fs-3 d-block text-body-secondary">Messages &amp; Emails</span>
                                       </div>
                                     </a>
-                                    <a
-                                      href="../horizontal/app-notes.html"
-                                      className="py-8 px-7 d-flex align-items-center"
-                                    >
-                                      <span className="d-flex align-items-center justify-content-center text-bg-light rounded-1 p-6">
-                                        <img
-                                          src="../assets/images/svgs/icon-tasks.svg"
-                                          alt="flexy-img"
-                                          width="24"
-                                          height="24"
-                                        />
+                                    <a href="../horizontal/app-notes.html" class="py-8 px-7 d-flex align-items-center">
+                                      <span class="d-flex align-items-center justify-content-center text-bg-light rounded-1 p-6">
+                                        <img src={iconTasks} alt="flexy-img" width="24" height="24" />
                                       </span>
-                                      <div className="w-100 ps-3">
-                                        <h6 className="mb-0 fs-4 lh-base">
-                                          My Task
-                                        </h6>
-                                        <span className="fs-3 d-block text-body-secondary">
-                                          To-do and Daily Tasks
-                                        </span>
+                                      <div class="w-100 ps-3">
+                                        <h6 class="mb-0 fs-4 lh-base">My Task</h6>
+                                        <span class="fs-3 d-block text-body-secondary">To-do and Daily Tasks</span>
                                       </div>
                                     </a>
                                   </div>
-                                  <div className="d-grid py-4 px-7 pt-8">
-                                    <div className="upgrade-plan bg-primary-subtle position-relative overflow-hidden rounded-2 p-4 mb-9">
-                                      <div className="row">
-                                        <div className="col-6">
-                                          <h5 className="fs-4 mb-3 fw-semibold">
-                                            Unlimited Access
-                                          </h5>
-                                          <button className="btn btn-primary">
-                                            Upgrade
-                                          </button>
+                                  <div class="d-grid py-4 px-7 pt-8">
+                                    <div class="upgrade-plan bg-primary-subtle position-relative overflow-hidden rounded-2 p-4 mb-9">
+                                      <div class="row">
+                                        <div class="col-6">
+                                          <h5 class="fs-4 mb-3 fw-semibold">Unlimited Access</h5>
+                                          <button class="btn btn-primary">Upgrade</button>
                                         </div>
-                                        <div className="col-6">
-                                          <div className="m-n4 unlimited-img">
-                                            <img
-                                              src="../assets/images/backgrounds/unlimited-bg.png"
-                                              alt="flexy-img"
-                                              className="w-100"
-                                            />
+                                        <div class="col-6">
+                                          <div class="m-n4 unlimited-img">
+                                            <img src={UnlimitedBg} alt="flexy-img" class="w-100" />
                                           </div>
                                         </div>
                                       </div>
                                     </div>
-                                    <a
-                                      href="../horizontal/authentication-login.html"
-                                      className="btn btn-outline-primary"
-                                    >
-                                      Log Out
-                                    </a>
+                                    <a href="../horizontal/authentication-login.html" class="btn btn-outline-primary">Log Out</a>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div
-                            className="simplebar-placeholder"
-                            style={{ width: "0px", height: "0px" }}
-                          />
+                          <div class="simplebar-placeholder" style="width: 364px; height: 610px;"></div>
                         </div>
-                        <div
-                          className="simplebar-track simplebar-horizontal"
-                          style={{ visibility: "hidden" }}
-                        >
-                          <div
-                            className="simplebar-scrollbar"
-                            style={{ width: "0px", display: "none" }}
-                          />
+                        <div class="simplebar-track simplebar-horizontal" style={{ "visibility": "hidden" }}>
+                          <div class="simplebar-scrollbar" style={{ "width": "0px", "display": "none" }}>
+                          </div>
                         </div>
-                        <div
-                          className="simplebar-track simplebar-vertical"
-                          style={{ visibility: "hidden" }}
-                        >
-                          <div
-                            className="simplebar-scrollbar"
-                            style={{ height: "0px", display: "none" }}
-                          />
+                        <div class="simplebar-track simplebar-vertical" style={{ "visibility": "hidden" }}>
+                          <div class="simplebar-scrollbar" style={{ "height": "0px", "display": "none" }}>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </li>
-                  {/* ------------------------------- */}
-                  {/* end profile Dropdown */}
-                  {/* ------------------------------- */}
                 </ul>
               </div>
             </div>
           </nav>
-          {/* ---------------------------------- */}
-          {/* End Vertical Layout Header */}
-          {/* ---------------------------------- */}
-          {/* ------------------------------- */}
-          {/* apps Dropdown in Small screen */}
-          {/* ------------------------------- */}
-          {/*  Mobilenavbar */}
           <div
-            className="offcanvas offcanvas-end"
-            data-bs-scroll="true"
-            tabindex="-1"
-            id="mobilenavbar"
-            aria-labelledby="offcanvasWithBothOptionsLabel"
+            class="offcanvas offcanvas-end"
+          // class={isOpenOffcanvas() ? "offcanvas offcanvas-end show" : "offcanvas offcanvas-end"}
           >
-            <nav className="sidebar-nav scroll-sidebar">
-              <div className="offcanvas-header justify-content-between">
-                <img
-                  src="../assets/images/logos/favicon.png"
-                  alt="flexy-img"
-                  className="img-fluid"
-                />
-                <button
-                  type="button"
-                  className="btn-close ms-auto"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                />
+            <nav class="sidebar-nav scroll-sidebar">
+              <div class="offcanvas-header justify-content-between">
+                <img src="../assets/images/logos/favicon.png" alt="flexy-img" class="img-fluid" />
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close" />
               </div>
-              <div className="offcanvas-body h-n80" data-simplebar="init">
-                <div className="simplebar-wrapper" style={{ margin: "-16px" }}>
-                  <div className="simplebar-height-auto-observer-wrapper">
-                    <div className="simplebar-height-auto-observer" />
-                  </div>
-                  <div className="simplebar-mask">
-                    <div
-                      className="simplebar-offset"
-                      style={{ right: "0px", bottom: "0px", left: "0px" }}
-                    >
-                      <div
-                        className="simplebar-content-wrapper"
-                        tabindex="0"
-                        role="region"
-                        aria-label="scrollable content"
-                        style={{ height: "auto", overflow: "hidden" }}
-                      >
-                        <div
-                          className="simplebar-content"
-                          style={{ padding: "16px" }}
-                        >
-                          <ul id="sidebarnav">
-                            <li className="sidebar-item">
-                              <a
-                                className="sidebar-link has-arrow"
-                                href="javascript:void(0)"
-                                aria-expanded="false"
-                              >
-                                <span>
-                                  <i className="ti ti-apps" />
-                                </span>
-                                <span className="hide-menu">Apps</span>
-                              </a>
-                              <ul
-                                aria-expanded="false"
-                                className="collapse first-level my-3"
-                              >
-                                <li className="sidebar-item py-2">
-                                  <a
-                                    href="../horizontal/app-chat.html"
-                                    className="d-flex align-items-center"
-                                  >
-                                    <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                      <img
-                                        src="../assets/images/svgs/icon-dd-chat.svg"
-                                        alt="flexy-img"
-                                        className="img-fluid"
-                                        width="24"
-                                        height="24"
-                                      />
-                                    </div>
-                                    <div>
-                                      <h6 className="mb-1 bg-hover-primary">
-                                        Chat Application
-                                      </h6>
-                                      <span className="fs-2 d-block text-muted">
-                                        New messages arrived
-                                      </span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <li className="sidebar-item py-2">
-                                  <a
-                                    href="../horizontal/app-invoice.html"
-                                    className="d-flex align-items-center"
-                                  >
-                                    <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                      <img
-                                        src="../assets/images/svgs/icon-dd-invoice.svg"
-                                        alt="flexy-img"
-                                        className="img-fluid"
-                                        width="24"
-                                        height="24"
-                                      />
-                                    </div>
-                                    <div>
-                                      <h6 className="mb-1 bg-hover-primary">
-                                        Invoice App
-                                      </h6>
-                                      <span className="fs-2 d-block text-muted">
-                                        Get latest invoice
-                                      </span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <li className="sidebar-item py-2">
-                                  <a
-                                    href="../horizontal/app-cotact.html"
-                                    className="d-flex align-items-center"
-                                  >
-                                    <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                      <img
-                                        src="../assets/images/svgs/icon-dd-mobile.svg"
-                                        alt="flexy-img"
-                                        className="img-fluid"
-                                        width="24"
-                                        height="24"
-                                      />
-                                    </div>
-                                    <div>
-                                      <h6 className="mb-1 bg-hover-primary">
-                                        Contact Application
-                                      </h6>
-                                      <span className="fs-2 d-block text-muted">
-                                        2 Unsaved Contacts
-                                      </span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <li className="sidebar-item py-2">
-                                  <a
-                                    href="../horizontal/app-email.html"
-                                    className="d-flex align-items-center"
-                                  >
-                                    <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                      <img
-                                        src="../assets/images/svgs/icon-dd-message-box.svg"
-                                        alt="flexy-img"
-                                        className="img-fluid"
-                                        width="24"
-                                        height="24"
-                                      />
-                                    </div>
-                                    <div>
-                                      <h6 className="mb-1 bg-hover-primary">
-                                        Email App
-                                      </h6>
-                                      <span className="fs-2 d-block text-muted">
-                                        Get new emails
-                                      </span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <li className="sidebar-item py-2">
-                                  <a
-                                    href="../horizontal/page-user-profile.html"
-                                    className="d-flex align-items-center"
-                                  >
-                                    <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                      <img
-                                        src="../assets/images/svgs/icon-dd-cart.svg"
-                                        alt="flexy-img"
-                                        className="img-fluid"
-                                        width="24"
-                                        height="24"
-                                      />
-                                    </div>
-                                    <div>
-                                      <h6 className="mb-1 bg-hover-primary">
-                                        User Profile
-                                      </h6>
-                                      <span className="fs-2 d-block text-muted">
-                                        learn more information
-                                      </span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <li className="sidebar-item py-2">
-                                  <a
-                                    href="../horizontal/app-calendar.html"
-                                    className="d-flex align-items-center"
-                                  >
-                                    <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                      <img
-                                        src="../assets/images/svgs/icon-dd-date.svg"
-                                        alt="flexy-img"
-                                        className="img-fluid"
-                                        width="24"
-                                        height="24"
-                                      />
-                                    </div>
-                                    <div>
-                                      <h6 className="mb-1 bg-hover-primary">
-                                        Calendar App
-                                      </h6>
-                                      <span className="fs-2 d-block text-muted">
-                                        Get dates
-                                      </span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <li className="sidebar-item py-2">
-                                  <a
-                                    href="../horizontal/app-contact2.html"
-                                    className="d-flex align-items-center"
-                                  >
-                                    <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                      <img
-                                        src="../assets/images/svgs/icon-dd-lifebuoy.svg"
-                                        alt="flexy-img"
-                                        className="img-fluid"
-                                        width="24"
-                                        height="24"
-                                      />
-                                    </div>
-                                    <div>
-                                      <h6 className="mb-1 bg-hover-primary">
-                                        Contact List Table
-                                      </h6>
-                                      <span className="fs-2 d-block text-muted">
-                                        Add new contact
-                                      </span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <li className="sidebar-item py-2">
-                                  <a
-                                    href="../horizontal/app-notes.html"
-                                    className="d-flex align-items-center"
-                                  >
-                                    <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                      <img
-                                        src="../assets/images/svgs/icon-dd-application.svg"
-                                        alt="flexy-img"
-                                        className="img-fluid"
-                                        width="24"
-                                        height="24"
-                                      />
-                                    </div>
-                                    <div>
-                                      <h6 className="mb-1 bg-hover-primary">
-                                        Notes Application
-                                      </h6>
-                                      <span className="fs-2 d-block text-muted">
-                                        To-do and Daily tasks
-                                      </span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <ul className="px-8 mt-7 mb-4">
-                                  <li className="sidebar-item mb-3">
-                                    <h5 className="fs-5 fw-semibold">
-                                      Quick Links
-                                    </h5>
-                                  </li>
-                                  <li className="sidebar-item py-2">
-                                    <a
-                                      className="fw-semibold text-dark"
-                                      href="../horizontal/page-pricing.html"
-                                    >
-                                      Pricing Page
-                                    </a>
-                                  </li>
-                                  <li className="sidebar-item py-2">
-                                    <a
-                                      className="fw-semibold text-dark"
-                                      href="../horizontal/authentication-login.html"
-                                    >
-                                      Authentication Design
-                                    </a>
-                                  </li>
-                                  <li className="sidebar-item py-2">
-                                    <a
-                                      className="fw-semibold text-dark"
-                                      href="../horizontal/authentication-register.html"
-                                    >
-                                      Register Now
-                                    </a>
-                                  </li>
-                                  <li className="sidebar-item py-2">
-                                    <a
-                                      className="fw-semibold text-dark"
-                                      href="../horizontal/authentication-error.html"
-                                    >
-                                      404 Error Page
-                                    </a>
-                                  </li>
-                                  <li className="sidebar-item py-2">
-                                    <a
-                                      className="fw-semibold text-dark"
-                                      href="../horizontal/app-notes.html"
-                                    >
-                                      Notes App
-                                    </a>
-                                  </li>
-                                  <li className="sidebar-item py-2">
-                                    <a
-                                      className="fw-semibold text-dark"
-                                      href="../horizontal/page-user-profile.html"
-                                    >
-                                      User Application
-                                    </a>
-                                  </li>
-                                  <li className="sidebar-item py-2">
-                                    <a
-                                      className="fw-semibold text-dark"
-                                      href="../horizontal/page-account-settings.html"
-                                    >
-                                      Account Settings
-                                    </a>
-                                  </li>
-                                </ul>
-                              </ul>
-                            </li>
-                            <li className="sidebar-item">
-                              <a
-                                className="sidebar-link"
-                                href="../horizontal/app-chat.html"
-                                aria-expanded="false"
-                              >
-                                <span>
-                                  <i className="ti ti-message-dots" />
-                                </span>
-                                <span className="hide-menu">Chat</span>
-                              </a>
-                            </li>
-                            <li className="sidebar-item">
-                              <a
-                                className="sidebar-link"
-                                href="../horizontal/app-calendar.html"
-                                aria-expanded="false"
-                              >
-                                <span>
-                                  <i className="ti ti-calendar" />
-                                </span>
-                                <span className="hide-menu">Calendar</span>
-                              </a>
-                            </li>
-                            <li className="sidebar-item">
-                              <a
-                                className="sidebar-link"
-                                href="../horizontal/app-email.html"
-                                aria-expanded="false"
-                              >
-                                <span>
-                                  <i className="ti ti-mail" />
-                                </span>
-                                <span className="hide-menu">Email</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="simplebar-placeholder"
-                    style={{ width: "0px", height: "0px" }}
-                  />
+              <div class="offcanvas-body h-n80" data-simplebar="init"><div class="simplebar-wrapper" style={{ "margin": "-16px" }}><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer" /></div><div class="simplebar-mask"><div class="simplebar-offset" style={{ "right": "0px", "bottom": "0px" }}><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style={{ "height": "100%", "overflow": "hidden" }}><div class="simplebar-content" style={{ "padding": "16px" }}>
+                <ul id="sidebarnav">
+                  <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                      <span>
+                        <i class="ti ti-apps" />
+                      </span>
+                      <span class="hide-menu">Apps</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level my-3">
+                      <li class="sidebar-item py-2">
+                        <a href="../horizontal/app-chat.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src={iconDdChat} alt="flexy-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">Chat Application</h6>
+                            <span class="fs-2 d-block text-muted">New messages arrived</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="sidebar-item py-2">
+                        <a href="../horizontal/app-invoice.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src={iconDdInvoice} alt="flexy-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">Invoice App</h6>
+                            <span class="fs-2 d-block text-muted">Get latest invoice</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="sidebar-item py-2">
+                        <a href="../horizontal/app-cotact.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src="../assets/images/svgs/icon-dd-mobile.svg" alt="flexy-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">Contact Application</h6>
+                            <span class="fs-2 d-block text-muted">2 Unsaved Contacts</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="sidebar-item py-2">
+                        <a href="../horizontal/app-email.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src="../assets/images/svgs/icon-dd-message-box.svg" alt="flexy-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">Email App</h6>
+                            <span class="fs-2 d-block text-muted">Get new emails</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="sidebar-item py-2">
+                        <a href="../horizontal/page-user-profile.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src="../assets/images/svgs/icon-dd-cart.svg" alt="flexy-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">User Profile</h6>
+                            <span class="fs-2 d-block text-muted">learn more information</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="sidebar-item py-2">
+                        <a href="../horizontal/app-calendar.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src="../assets/images/svgs/icon-dd-date.svg" alt="flexy-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">Calendar App</h6>
+                            <span class="fs-2 d-block text-muted">Get dates</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="sidebar-item py-2">
+                        <a href="../horizontal/app-contact2.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src="../assets/images/svgs/icon-dd-lifebuoy.svg" alt="flexy-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">Contact List Table</h6>
+                            <span class="fs-2 d-block text-muted">Add new contact</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="sidebar-item py-2">
+                        <a href="../horizontal/app-notes.html" class="d-flex align-items-center">
+                          <div class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
+                            <img src="../assets/images/svgs/icon-dd-application.svg" alt="flexy-img" class="img-fluid" width="24" height="24" />
+                          </div>
+                          <div>
+                            <h6 class="mb-1 bg-hover-primary">Notes Application</h6>
+                            <span class="fs-2 d-block text-muted">To-do and Daily tasks</span>
+                          </div>
+                        </a>
+                      </li>
+                      <ul class="px-8 mt-7 mb-4">
+                        <li class="sidebar-item mb-3">
+                          <h5 class="fs-5 fw-semibold">Quick Links</h5>
+                        </li>
+                        <li class="sidebar-item py-2">
+                          <a class="fw-semibold text-dark" href="../horizontal/page-pricing.html">Pricing Page</a>
+                        </li>
+                        <li class="sidebar-item py-2">
+                          <a class="fw-semibold text-dark" href="../horizontal/authentication-login.html">Authentication
+                            Design</a>
+                        </li>
+                        <li class="sidebar-item py-2">
+                          <a class="fw-semibold text-dark" href="../horizontal/authentication-register.html">Register Now</a>
+                        </li>
+                        <li class="sidebar-item py-2">
+                          <a class="fw-semibold text-dark" href="../horizontal/authentication-error.html">404 Error Page</a>
+                        </li>
+                        <li class="sidebar-item py-2">
+                          <a class="fw-semibold text-dark" href="../horizontal/app-notes.html">Notes App</a>
+                        </li>
+                        <li class="sidebar-item py-2">
+                          <a class="fw-semibold text-dark" href="../horizontal/page-user-profile.html">User Application</a>
+                        </li>
+                        <li class="sidebar-item py-2">
+                          <a class="fw-semibold text-dark" href="../horizontal/page-account-settings.html">Account Settings</a>
+                        </li>
+                      </ul>
+                    </ul>
+                  </li>
+                  <li class="sidebar-item">
+                    <a class="sidebar-link" href="../horizontal/app-chat.html" aria-expanded="false">
+                      <span>
+                        <i class="ti ti-message-dots" />
+                      </span>
+                      <span class="hide-menu">Chat</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a class="sidebar-link" href="../horizontal/app-calendar.html" aria-expanded="false">
+                      <span>
+                        <i class="ti ti-calendar" />
+                      </span>
+                      <span class="hide-menu">Calendar</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a class="sidebar-link" href="../horizontal/app-email.html" aria-expanded="false">
+                      <span>
+                        <i class="ti ti-mail" />
+                      </span>
+                      <span class="hide-menu">Email</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              </div>
+              </div>
+              </div>
+                <div class="simplebar-placeholder" style={{ "width": "330px", "height": "610px" }} />
+              </div>
+                <div class="simplebar-track simplebar-horizontal" style={{ "visibility": "hidden" }}>
+                  <div class="simplebar-scrollbar" style={{ "width": "0px", "display": "none" }} />
                 </div>
-                <div
-                  className="simplebar-track simplebar-horizontal"
-                  style={{ visibility: "hidden" }}
-                >
-                  <div
-                    className="simplebar-scrollbar"
-                    style={{ width: "0px", display: "none" }}
-                  />
-                </div>
-                <div
-                  className="simplebar-track simplebar-vertical"
-                  style={{ visibility: "hidden" }}
-                >
-                  <div
-                    className="simplebar-scrollbar"
-                    style={{ height: "0px", display: "none" }}
-                  />
+                <div class="simplebar-track simplebar-vertical" style={{ "visibility": "hidden" }}>
+                  <div class="simplebar-scrollbar" style={{ "height": "0px", "display": "none" }} />
                 </div>
               </div>
             </nav>
           </div>
+          <div class={isOpenOffcanvas() ? "offcanvas-backdrop fade show" : ""}></div>
         </div>
         <div className="app-header with-horizontal">
           <nav className="navbar navbar-expand-xl container-fluid p-0 mw-100">
@@ -1334,15 +1023,19 @@ export default function Header() {
                 </a>
               </li>
               <li className="nav-item d-none d-xl-block">
-                <a href="../horizontal/index.html" className="text-nowrap nav-link">
+                <a
+                  href="../horizontal/index.html"
+                  className="text-nowrap nav-link"
+                >
                   <img
-                    src="../assets/images/logos/dark-logo.svg"
+                    src={darklLogo}
                     className="dark-logo"
                     alt="flexy-img"
                     style={{ display: "flex" }}
                   />
                   <img
-                    src="../assets/images/logos/light-logo.svg"
+                    src={lightLogo}
+                    // src="../assets/images/logos/light-logo.svg"
                     className="light-logo"
                     alt="flexy-img"
                     style={{ display: "none" }}
@@ -1386,7 +1079,7 @@ export default function Header() {
                                   >
                                     <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                       <img
-                                        src="../assets/images/svgs/icon-dd-chat.svg"
+                                        src={iconDdChat}
                                         alt="flexy-img"
                                         className="img-fluid"
                                         width="24"
@@ -1408,7 +1101,7 @@ export default function Header() {
                                   >
                                     <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                       <img
-                                        src="../assets/images/svgs/icon-dd-invoice.svg"
+                                        src={iconDdInvoice}
                                         alt="flexy-img"
                                         className="img-fluid"
                                         width="24"
@@ -1430,7 +1123,7 @@ export default function Header() {
                                   >
                                     <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                       <img
-                                        src="../assets/images/svgs/icon-dd-mobile.svg"
+                                        src={iconDdMobile}
                                         alt="flexy-img"
                                         className="img-fluid"
                                         width="24"
@@ -1452,7 +1145,7 @@ export default function Header() {
                                   >
                                     <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                       <img
-                                        src="../assets/images/svgs/icon-dd-message-box.svg"
+                                        src={iconDdMessageBox}
                                         alt="flexy-img"
                                         className="img-fluid"
                                         width="24"
@@ -1478,7 +1171,7 @@ export default function Header() {
                                   >
                                     <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                       <img
-                                        src="../assets/images/svgs/icon-dd-cart.svg"
+                                        src={iconDdCart}
                                         alt="flexy-img"
                                         className="img-fluid"
                                         width="24"
@@ -1500,7 +1193,7 @@ export default function Header() {
                                   >
                                     <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                       <img
-                                        src="../assets/images/svgs/icon-dd-date.svg"
+                                        src={iconDdDate}
                                         alt="flexy-img"
                                         className="img-fluid"
                                         width="24"
@@ -1522,7 +1215,7 @@ export default function Header() {
                                   >
                                     <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                       <img
-                                        src="../assets/images/svgs/icon-dd-lifebuoy.svg"
+                                        src={iconDdLifebuoy}
                                         alt="flexy-img"
                                         className="img-fluid"
                                         width="24"
@@ -1544,8 +1237,7 @@ export default function Header() {
                                   >
                                     <div className="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                       <img
-                                        src="../assets/images/svgs/icon-dd-application.svg"
-                                        alt="flexy-img"
+                                        src={iconDdApplication}
                                         className="img-fluid"
                                         width="24"
                                         height="24"
@@ -1576,7 +1268,9 @@ export default function Header() {
                             </div>
                             <div className="col-4">
                               <div className="d-flex justify-content-end pe-4">
-                                <button className="btn btn-primary">Check</button>
+                                <button className="btn btn-primary">
+                                  Check
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -1649,9 +1343,6 @@ export default function Header() {
                   </div>
                 </div>
               </li>
-              {/* ------------------------------- */}
-              {/* end apps Dropdown */}
-              {/* ------------------------------- */}
               <li className="nav-item dropdown-hover d-none d-lg-block">
                 <a className="nav-link" href="../horizontal/app-chat.html">
                   Chat
@@ -1669,9 +1360,12 @@ export default function Header() {
               </li>
             </ul>
             <div className="d-block d-xl-none">
-              <a href="../horizontal/index.html" className="text-nowrap nav-link">
+              <a
+                href="../horizontal/index.html"
+                className="text-nowrap nav-link"
+              >
                 <img
-                  src="../assets/images/logos/dark-logo.svg"
+                  src={darklLogo}
                   width="180"
                   alt="flexy-img"
                 />
@@ -1706,23 +1400,26 @@ export default function Header() {
                   <i className="ti ti-align-justified fs-7" />
                 </a>
                 <ul className="navbar-nav flex-row ms-auto align-items-center justify-content-center">
-                  {/* ------------------------------- */}
-                  {/* start language Dropdown */}
-                  {/* ------------------------------- */}
                   <li className="nav-item nav-icon-hover-bg rounded-circle">
                     <a
                       className="nav-link moon dark-layout"
                       href="javascript:void(0)"
                       style={{ display: "flex" }}
                     >
-                      <i className="ti ti-moon moon" style={{ display: "flex" }} />
+                      <i
+                        className="ti ti-moon moon"
+                        style={{ display: "flex" }}
+                      />
                     </a>
                     <a
                       className="nav-link sun light-layout"
                       href="javascript:void(0)"
                       style={{ display: "none" }}
                     >
-                      <i className="ti ti-sun sun" style={{ display: "none" }} />
+                      <i
+                        className="ti ti-sun sun"
+                        style={{ display: "none" }}
+                      />
                     </a>
                   </li>
                   <li className="nav-item nav-icon-hover-bg rounded-circle dropdown">
@@ -1733,7 +1430,7 @@ export default function Header() {
                       aria-expanded="false"
                     >
                       <img
-                        src="../assets/images/svgs/icon-flag-en.svg"
+                        src={iconFlagEn}
                         alt="flexy-img"
                         width="20px"
                         height="20px"
@@ -1751,7 +1448,7 @@ export default function Header() {
                         >
                           <div className="position-relative">
                             <img
-                              src="../assets/images/svgs/icon-flag-en.svg"
+                              src={iconFlagEn}
                               alt="flexy-img"
                               width="20px"
                               height="20px"
@@ -1766,7 +1463,7 @@ export default function Header() {
                         >
                           <div className="position-relative">
                             <img
-                              src="../assets/images/svgs/icon-flag-cn.svg"
+                              src={iconFlagCn}
                               alt="flexy-img"
                               width="20px"
                               height="20px"
@@ -1781,7 +1478,7 @@ export default function Header() {
                         >
                           <div className="position-relative">
                             <img
-                              src="../assets/images/svgs/icon-flag-fr.svg"
+                              src={iconFlagFr}
                               alt="flexy-img"
                               width="20px"
                               height="20px"
@@ -1796,7 +1493,7 @@ export default function Header() {
                         >
                           <div className="position-relative">
                             <img
-                              src="../assets/images/svgs/icon-flag-sa.svg"
+                              src={iconFlagSa}
                               alt="flexy-img"
                               width="20px"
                               height="20px"
@@ -1808,12 +1505,6 @@ export default function Header() {
                       </div>
                     </div>
                   </li>
-                  {/* ------------------------------- */}
-                  {/* end language Dropdown */}
-                  {/* ------------------------------- */}
-                  {/* ------------------------------- */}
-                  {/* start shopping cart Dropdown */}
-                  {/* ------------------------------- */}
                   <li className="nav-item nav-icon-hover-bg rounded-circle">
                     <a
                       className="nav-link position-relative"
@@ -1828,12 +1519,6 @@ export default function Header() {
                       </span>
                     </a>
                   </li>
-                  {/* ------------------------------- */}
-                  {/* end shopping cart Dropdown */}
-                  {/* ------------------------------- */}
-                  {/* ------------------------------- */}
-                  {/* start notification Dropdown */}
-                  {/* ------------------------------- */}
                   <li className="nav-item nav-icon-hover-bg rounded-circle dropdown">
                     <a
                       className="nav-link position-relative"
@@ -2049,12 +1734,6 @@ export default function Header() {
                       </div>
                     </div>
                   </li>
-                  {/* ------------------------------- */}
-                  {/* end notification Dropdown */}
-                  {/* ------------------------------- */}
-                  {/* ------------------------------- */}
-                  {/* start profile Dropdown */}
-                  {/* ------------------------------- */}
                   <li className="nav-item dropdown">
                     <a
                       className="nav-link pe-0"
@@ -2065,7 +1744,7 @@ export default function Header() {
                       <div className="d-flex align-items-center">
                         <div className="user-profile-img">
                           <img
-                            src="../assets/images/profile/user-1.jpg"
+                            src={User1}
                             className="rounded-circle"
                             width="35"
                             height="35"
@@ -2119,7 +1798,9 @@ export default function Header() {
                                       alt="flexy-img"
                                     />
                                     <div className="ms-3">
-                                      <h5 className="mb-1 fs-4">Johnathan Doe</h5>
+                                      <h5 className="mb-1 fs-4">
+                                        Johnathan Doe
+                                      </h5>
                                       <span className="mb-1 d-block">
                                         Administrator
                                       </span>
@@ -2208,7 +1889,7 @@ export default function Header() {
                                         <div className="col-6">
                                           <div className="m-n4 unlimited-img">
                                             <img
-                                              src="../assets/images/backgrounds/unlimited-bg.png"
+                                              src={UnlimitedBg}
                                               alt="flexy-img"
                                               className="w-100"
                                             />
@@ -2253,9 +1934,6 @@ export default function Header() {
                       </div>
                     </div>
                   </li>
-                  {/* ------------------------------- */}
-                  {/* end profile Dropdown */}
-                  {/* ------------------------------- */}
                 </ul>
               </div>
             </div>

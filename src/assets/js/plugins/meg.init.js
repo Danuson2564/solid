@@ -60,7 +60,7 @@ $(function () {
       titleSrc: function (item) {
         return (
           item.el.attr("title") +
-          ' &middot; <a className="image-source-link" href="' +
+          ' &middot; <a class="image-source-link" href="' +
           item.el.attr("data-source") +
           '" target="_blank">image source</a>'
         );

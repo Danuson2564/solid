@@ -26,9 +26,9 @@ function education_fields() {
   divtest.setAttribute("class", "mb-3 removeclass" + room);
   var rdiv = "removeclass" + room;
   divtest.innerHTML =
-    '<form className="row"><div className="col-sm-3"><div className="form-group"><input type="text" className="form-control" id="Schoolname" name="Schoolname" placeholder="School Name"></div></div><div className="col-sm-2"> <div className="form-group"> <input type="text" className="form-control" id="Age" name="Age" placeholder="Age"> </div></div><div className="col-sm-2"> <div className="form-group"> <input type="text" className="form-control" id="Degree" name="Degree" placeholder="Degree"> </div></div><div className="col-sm-3"> <div className="form-group"> <select className="form-select" id="educationDate" name="educationDate"> <option>Date</option> <option value="2015">2015</option> <option value="2016">2016</option> <option value="2017">2017</option> <option value="2018">2018</option> </select> </div></div><div className="col-sm-2"> <div className="form-group"> <button className="btn btn-danger" type="button" onclick="remove_education_fields(' +
+    '<form class="row"><div class="col-sm-3"><div class="form-group"><input type="text" class="form-control" id="Schoolname" name="Schoolname" placeholder="School Name"></div></div><div class="col-sm-2"> <div class="form-group"> <input type="text" class="form-control" id="Age" name="Age" placeholder="Age"> </div></div><div class="col-sm-2"> <div class="form-group"> <input type="text" class="form-control" id="Degree" name="Degree" placeholder="Degree"> </div></div><div class="col-sm-3"> <div class="form-group"> <select class="form-select" id="educationDate" name="educationDate"> <option>Date</option> <option value="2015">2015</option> <option value="2016">2016</option> <option value="2017">2017</option> <option value="2018">2018</option> </select> </div></div><div class="col-sm-2"> <div class="form-group"> <button class="btn btn-danger" type="button" onclick="remove_education_fields(' +
     room +
-    ');"> <i className="ti ti-minus"></i> </button> </div></div></form>';
+    ');"> <i class="ti ti-minus"></i> </button> </div></div></form>';
 
   objTo.appendChild(divtest);
 }

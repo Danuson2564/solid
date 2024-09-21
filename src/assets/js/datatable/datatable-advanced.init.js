@@ -69,7 +69,7 @@ var table = $("#row_group").DataTable({
           $(rows)
             .eq(i)
             .before(
-              '<tr className="group"><td colspan="5">' + group + "</td></tr>"
+              '<tr class="group"><td colspan="5">' + group + "</td></tr>"
             );
 
           last = group;

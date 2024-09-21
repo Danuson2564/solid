@@ -63,7 +63,7 @@
 
             list.el.data('nestable-group', this.options.group);
 
-            list.placeEl = $('<div className="' + list.options.placeClass + '"/>');
+            list.placeEl = $('<div class="' + list.options.placeClass + '"/>');
 
             $.each(this.el.find(list.options.itemNodeName), function(k, el) {
                 list.setParent($(el));
@@ -447,7 +447,7 @@
                     this.unsetParent(parent.parent());
                 }
                 if (!this.dragRootEl.find(opt.itemNodeName).length) {
-                    this.dragRootEl.append('<div className="' + opt.emptyClass + '"/>');
+                    this.dragRootEl.append('<div class="' + opt.emptyClass + '"/>');
                 }
                 // parent root list has changed
                 if (isNewRoot) {

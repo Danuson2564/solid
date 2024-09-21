@@ -22,31 +22,31 @@ $(function () {
         );
         msg += msg_sent("That is very deep indeed!");
         var html =
-          "<div className='user-chat' id='user-chat" +
+          "<div class='user-chat' id='user-chat" +
           id +
           "' data-user-id='" +
           id +
           "'>";
         html +=
-          "<div className='chat-head'><img src='" +
+          "<div class='chat-head'><img src='" +
           img +
           "' data-user-id='" +
           id +
-          "'><span className='status " +
+          "'><span class='status " +
           status +
-          "'></span><span className='name'>" +
+          "'></span><span class='name'>" +
           name +
-          "</span><span className='opts'><i className='material-icons closeit' data-user-id='" +
+          "</span><span class='opts'><i class='material-icons closeit' data-user-id='" +
           id +
-          "'>clear</i><i className='material-icons mini-chat' data-user-id='" +
+          "'>clear</i><i class='material-icons mini-chat' data-user-id='" +
           id +
           "'>remove</i></span></div>";
         html +=
-          "<div className='chat-body'><ul className='chat-list'>" + msg + "</ul></div>";
+          "<div class='chat-body'><ul class='chat-list'>" + msg + "</ul></div>";
         html +=
-          "<div className='chat-footer'><input type='text' data-user-id='" +
+          "<div class='chat-footer'><input type='text' data-user-id='" +
           id +
-          "' placeholder='Type & Enter' className='form-control'></div>";
+          "' placeholder='Type & Enter' class='form-control'></div>";
         html += "</div>";
         $(".chat-windows").append(html);
       }
@@ -126,9 +126,9 @@ $(".message-type-box").on("keydown", function (event) {
       return;
     }
     $messageHtml =
-      '<div className="text-end mb-3"> <div className="p-2 bg-info-subtle text-dark rounded-1 d-inline-block fs-3">' +
+      '<div class="text-end mb-3"> <div class="p-2 bg-info-subtle text-dark rounded-1 d-inline-block fs-3">' +
       chatMessageValue +
-      '</div> <div className="d-block fs-2">' +
+      '</div> <div class="d-block fs-2">' +
       time +
       "</div>  </div>";
     var appendMessage = $(this)

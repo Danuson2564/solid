@@ -34,7 +34,7 @@ function iconFormat(icon) {
     return icon.text;
   }
   var $icon =
-    "<i className='fab fa-" + $(icon.element).data("icon") + "'></i>" + icon.text;
+    "<i class='fab fa-" + $(icon.element).data("icon") + "'></i>" + icon.text;
   return $icon;
 }
 
@@ -64,7 +64,7 @@ function iconFormat(icon) {
     return icon.text;
   }
   var $icon =
-    "<i className='fab fa-" + $(icon.element).data("icon") + "'></i>" + icon.text;
+    "<i class='fab fa-" + $(icon.element).data("icon") + "'></i>" + icon.text;
   return $icon;
 }
 
@@ -183,31 +183,31 @@ function formatRepo(repo) {
   if (repo.loading) return repo.text;
 
   var markup =
-    "<div className='select2-result-repository clearfix'>" +
-    "<div className='select2-result-repository__avatar'><img src='" +
+    "<div class='select2-result-repository clearfix'>" +
+    "<div class='select2-result-repository__avatar'><img src='" +
     repo.owner.avatar_url +
     "' /></div>" +
-    "<div className='select2-result-repository__meta'>" +
-    "<div className='select2-result-repository__title'>" +
+    "<div class='select2-result-repository__meta'>" +
+    "<div class='select2-result-repository__title'>" +
     repo.full_name +
     "</div>";
 
   if (repo.description) {
     markup +=
-      "<div className='select2-result-repository__description'>" +
+      "<div class='select2-result-repository__description'>" +
       repo.description +
       "</div>";
   }
 
   markup +=
-    "<div className='select2-result-repository__statistics'>" +
-    "<div className='select2-result-repository__forks'><i className='la la-code-fork mr-0'></i> " +
+    "<div class='select2-result-repository__statistics'>" +
+    "<div class='select2-result-repository__forks'><i class='la la-code-fork mr-0'></i> " +
     repo.forks_count +
     " Forks</div>" +
-    "<div className='select2-result-repository__stargazers'><i className='la la-star-o mr-0'></i> " +
+    "<div class='select2-result-repository__stargazers'><i class='la la-star-o mr-0'></i> " +
     repo.stargazers_count +
     " Stars</div>" +
-    "<div className='select2-result-repository__watchers'><i className='la la-eye mr-0'></i> " +
+    "<div class='select2-result-repository__watchers'><i class='la la-eye mr-0'></i> " +
     repo.watchers_count +
     " Watchers</div>" +
     "</div>" +
@@ -253,7 +253,7 @@ function iconFormat(ficon) {
     return ficon.text;
   }
   var $ficon =
-    "<i className='flag-icon flag-icon-" +
+    "<i class='flag-icon flag-icon-" +
     $(ficon.element).data("flag") +
     "'></i>" +
     ficon.text;

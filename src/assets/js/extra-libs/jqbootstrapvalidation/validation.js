@@ -95,7 +95,7 @@
               settings.options.autoAdd &&
               settings.options.autoAdd.helpBlocks
             ) {
-              $helpBlock = $('<div className="help-block" />');
+              $helpBlock = $('<div class="help-block" />');
               $controlGroup.find(".controls").append($helpBlock);
               createdElements.push($helpBlock[0]);
             }

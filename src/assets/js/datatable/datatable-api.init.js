@@ -32,7 +32,7 @@ $(".datatable-select-inputs").DataTable({
       .every(function () {
         var column = this;
         var select = $(
-          '<select className="form-select"><option value="">Select option</option></select>'
+          '<select class="form-select"><option value="">Select option</option></select>'
         )
           .appendTo($(column.footer()).empty())
           .on("change", function () {
@@ -59,7 +59,7 @@ $(".datatable-select-inputs").DataTable({
 $(".text-inputs-searching tfoot th").each(function () {
   var title = $(this).text();
   $(this).html(
-    '<input type="text" className="form-control" placeholder="Search ' +
+    '<input type="text" class="form-control" placeholder="Search ' +
       title +
       '" />'
   );
@@ -86,7 +86,7 @@ tableSearching.columns().every(function () {
 function format(d) {
   // `d` is the original data object for the row
   return (
-    '<table className="table" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
+    '<table class="table" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
     "<tr>" +
     "<td>Full name:</td>" +
     "<td>" +

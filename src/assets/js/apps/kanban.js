@@ -88,46 +88,46 @@ $(function () {
         var itemText = document.getElementById("kanban-text").value;
 
         item_html =
-          '<div data-draggable="true" className="card task-text-progress" style="">' +
-          '<div className="card-body">' +
-          '<div className="task-header">' +
-          '<div className="">' +
-          '<h4 className="" data-item-title="' +
+          '<div data-draggable="true" class="card task-text-progress" style="">' +
+          '<div class="card-body">' +
+          '<div class="task-header">' +
+          '<div class="">' +
+          '<h4 class="" data-item-title="' +
           itemTitle +
           '">' +
           itemTitle +
           "</h4>" +
           "</div>" +
-          '<div className="">' +
-          '<div className="dropdown">' +
-          '<a className="dropdown-toggle" href="javascript:void(0)" role="button" id="dropdownMenuLink-4" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
-          '<i className="ti ti-dots-vertical text-dark"></i>' +
+          '<div class="">' +
+          '<div class="dropdown">' +
+          '<a class="dropdown-toggle" href="javascript:void(0)" role="button" id="dropdownMenuLink-4" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
+          '<i class="ti ti-dots-vertical text-dark"></i>' +
           "</a>" +
-          '<div className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink-4">' +
-          '<a className="dropdown-item kanban-item-edit cursor-pointer d-flex align-items-center gap-1" href="javascript:void(0);"><i className="ti ti-pencil fs-5"></i>Edit</a>' +
-          '<a className="dropdown-item kanban-item-delete cursor-pointer d-flex align-items-center gap-1" href="javascript:void(0);"><i className="ti ti-trash fs-5"></i>Delete</a>' +
+          '<div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink-4">' +
+          '<a class="dropdown-item kanban-item-edit cursor-pointer d-flex align-items-center gap-1" href="javascript:void(0);"><i class="ti ti-pencil fs-5"></i>Edit</a>' +
+          '<a class="dropdown-item kanban-item-delete cursor-pointer d-flex align-items-center gap-1" href="javascript:void(0);"><i class="ti ti-trash fs-5"></i>Delete</a>' +
           "</div>" +
           "</div>" +
           "</div>" +
           "</div>" +
-          '<div className="task-body">' +
-          '<div className="task-content">' +
-          '<p className="mb-0" data-item-text="' +
+          '<div class="task-body">' +
+          '<div class="task-content">' +
+          '<p class="mb-0" data-item-text="' +
           itemText +
           '">' +
           itemText +
           "</p>" +
           "</div>" +
-          '<div className="task-bottom">' +
-          '<div className="tb-section-1">' +
-          '<span className="hstack gap-2 fs-2" data-item-date="' +
+          '<div class="task-bottom">' +
+          '<div class="tb-section-1">' +
+          '<span class="hstack gap-2 fs-2" data-item-date="' +
           today +
-          '"><i className="ti ti-calendar fs-5"></i> ' +
+          '"><i class="ti ti-calendar fs-5"></i> ' +
           today +
           "</span>" +
           "</div>" +
-          '<div className="tb-section-2">' +
-          '<span className="badge text-bg-success fs-1">Design</span>' +
+          '<div class="tb-section-2">' +
+          '<span class="badge text-bg-success fs-1">Design</span>' +
           "</div>" +
           "</div>" +
           "</div>" +
@@ -181,28 +181,28 @@ $(function () {
       item_html =
         '<div data-item="item-' +
         itemDataAttr +
-        '" className="task-list-container  mb-4 " data-action="sorting">' +
-        '<div className="connect-sorting">' +
-        '<div className="task-container-header">' +
-        '<h6 className="item-head mb-0 fs-4 fw-semibold" data-item-title="' +
+        '" class="task-list-container  mb-4 " data-action="sorting">' +
+        '<div class="connect-sorting">' +
+        '<div class="task-container-header">' +
+        '<h6 class="item-head mb-0 fs-4 fw-semibold" data-item-title="' +
         itemTitle +
         '">' +
         itemTitle +
         "</h6>" +
-        '<div className="hstack gap-2">' +
-        '<div className="dropdown">' +
-        '<a className="dropdown-toggle" href="javascript:void(0)" role="button" id="dropdownMenuLink-4" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
-        '<i className="ti ti-dots-vertical text-dark"></i>' +
+        '<div class="hstack gap-2">' +
+        '<div class="dropdown">' +
+        '<a class="dropdown-toggle" href="javascript:void(0)" role="button" id="dropdownMenuLink-4" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">' +
+        '<i class="ti ti-dots-vertical text-dark"></i>' +
         "</a>" +
-        '<div className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink-4">' +
-        '<a className="dropdown-item list-edit" href="javascript:void(0);">Edit</a>' +
-        '<a className="dropdown-item list-delete" href="javascript:void(0);">Delete</a>' +
-        '<a className="dropdown-item list-clear-all" href="javascript:void(0);">Clear All</a>' +
+        '<div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink-4">' +
+        '<a class="dropdown-item list-edit" href="javascript:void(0);">Edit</a>' +
+        '<a class="dropdown-item list-delete" href="javascript:void(0);">Delete</a>' +
+        '<a class="dropdown-item list-clear-all" href="javascript:void(0);">Clear All</a>' +
         "</div>" +
         "</div>" +
         "</div>" +
         "</div>" +
-        '<div className="connect-sorting-content" data-sortable="true">' +
+        '<div class="connect-sorting-content" data-sortable="true">' +
         "</div>" +
         "</div>" +
         "</div>";

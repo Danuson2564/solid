@@ -50,7 +50,7 @@ import successIcon from '../assets/images/svgs/success.svg';
 import warningIcon from '../assets/images/svgs/warning.svg';
 import lightLogo from '../assets/images/logos/light-logo.svg'
 import darklLogo from '../assets/images/logos/dark-logo.svg'
-
+import ErrorIcon from "../assets/images/backgrounds/errorimg.svg";
 
 export {
     dangerIcon,
@@ -104,5 +104,6 @@ export {
     successIcon,
     warningIcon,
     lightLogo,
-    darklLogo
+    darklLogo,
+    ErrorIcon
 };
