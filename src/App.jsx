@@ -106,10 +106,6 @@ function App() {
           <Route path="/ui/Lists" component={Lists} />
           <Route path="/ui/Scrollspy" component={Scrollspy} />
           <Route path="/ui/tooltipPopover" component={TooltipPopover} />
-
-
-
-
         </Router>
       </MainLayout>
     </>

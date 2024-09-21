@@ -1,0 +1,14 @@
+.continer {
+    padding: 5rem;
+}
+
+.sup-title {
+    color:gray;
+    font-size: 1.125rem;
+}
+
+.title {
+    color: black;
+    font-size: 1.875rem;
+    font-weight: 700;
+}

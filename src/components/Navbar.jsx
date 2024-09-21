@@ -81,7 +81,7 @@ export default function Navbar() {
                   </a>
                 </li>
                 <li className="sidebar-item">
-                  <a href="/app/contact" className="sidebar-link">
+                  <a href="/app/contacttable" className="sidebar-link">
                     <i className="ti ti-phone" />
                     <span className="hide-menu">Contact Table</span>
                   </a>
@@ -147,7 +147,7 @@ export default function Navbar() {
                   </a>
                 </li>
                 <li className="sidebar-item">
-                  <a href="/eco-add-product" className="sidebar-link">
+                  <a href="/app/addproduct" className="sidebar-link">
                     <i className="ti ti-file-plus" />
                     <span className="hide-menu">Add Product</span>
                   </a>
