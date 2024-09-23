@@ -73,7 +73,7 @@ export default function Navbar() {
                   </a>
                 </li>
                 <li className="sidebar-item">
-                  <a className="sidebar-link" href="/email" aria-expanded="false">
+                  <a className="sidebar-link" href="/app/email" aria-expanded="false">
                     <span>
                       <i className="ti ti-mail" />
                     </span>
@@ -87,7 +87,7 @@ export default function Navbar() {
                   </a>
                 </li>
                 <li className="sidebar-item">
-                  <a href="/app/contact2" className="sidebar-link">
+                  <a href="/app/contactlist" className="sidebar-link">
                     <i className="ti ti-list-details" />
                     <span className="hide-menu">Contact List</span>
                   </a>
@@ -105,19 +105,19 @@ export default function Navbar() {
                   </a>
                 </li>
                 <li className="sidebar-item">
-                  <a href="/app/pageUserProfile" className="sidebar-link">
+                  <a href="/app/userprofile" className="sidebar-link">
                     <i className="ti ti-user-circle" />
                     <span className="hide-menu">User Profile</span>
                   </a>
                 </li>
                 <li className="sidebar-item">
-                  <a href="/app/blogPosts" className="sidebar-link">
+                  <a href="/app/posts" className="sidebar-link">
                     <i className="ti ti-article" />
                     <span className="hide-menu">Posts</span>
                   </a>
                 </li>
                 <li className="sidebar-item">
-                  <a href="/app/blogDetail" className="sidebar-link">
+                  <a href="/app/detail" className="sidebar-link">
                     <i className="ti ti-details" />
                     <span className="hide-menu">Detail</span>
                   </a>
@@ -129,7 +129,7 @@ export default function Navbar() {
                   </a>
                 </li>
                 <li className="sidebar-item">
-                  <a href="app/shopDetail" className="sidebar-link">
+                  <a href="app/shopdetail" className="sidebar-link">
                     <i className="ti ti-basket" />
                     <span className="hide-menu">Shop Detail</span>
                   </a>
@@ -141,7 +141,7 @@ export default function Navbar() {
                   </a>
                 </li>
                 <li className="sidebar-item">
-                  <a href="/eco-checkout" className="sidebar-link">
+                  <a href="/app/checkout" className="sidebar-link">
                     <i className="ti ti-brand-shopee" />
                     <span className="hide-menu">Checkout</span>
                   </a>
@@ -153,7 +153,7 @@ export default function Navbar() {
                   </a>
                 </li>
                 <li className="sidebar-item">
-                  <a href="/eco-edit-product" className="sidebar-link">
+                  <a href="/app/editproduct" className="sidebar-link">
                     <i className="ti ti-file-pencil" />
                     <span className="hide-menu">Edit Product</span>
                   </a>
