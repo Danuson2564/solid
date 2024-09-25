@@ -1,8 +1,5 @@
-export default function Scrollspy() { 
+export default function Scollspy() {
     return (
-      <>
         <h1>Scrollspy</h1>
-      </>
-    );
-  }
-  
+    )
+}

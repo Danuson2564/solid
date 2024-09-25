@@ -1,8 +1,7 @@
-export default function AdvancedInitialisation() { 
+export default function TooltipPopover() { 
     return (
       <>
-        <h1>AdvancedInitialisation</h1>
+        <h1>TooltipPopover</h1>
       </>
     );
   }
-  

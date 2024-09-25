@@ -45,16 +45,13 @@ import Link from "./routes/UI/Link";
 import Lists from "./routes/UI/Lists";
 import Scrollspy from "./routes/UI/Scrollspy";
 import TooltipPopover from "./routes/UI/TooltipPopover";
-import Error from "./routes/Error";
 
 function App() {
   return (
     <>
       <MainLayout>
         <Router root={MainLayout}>
-          {/* Error */}
-          <Route path="/*all" component={Error} />
-
+          {/* home */}
           {/* <Route path="/" component={Home} /> */}
           <Route path="/" component={Analytical} />
           <Route path="/eCommerce" component={ECommerce} />
@@ -106,6 +103,10 @@ function App() {
           <Route path="/ui/Lists" component={Lists} />
           <Route path="/ui/Scrollspy" component={Scrollspy} />
           <Route path="/ui/tooltipPopover" component={TooltipPopover} />
+
+
+
+
         </Router>
       </MainLayout>
     </>

@@ -1,8 +1,7 @@
 export default function Typography() { 
-    return (
-      <>
-        <h1>Typography</h1>
-      </>
-    );
-  }
-  
+  return (
+    <>
+      <h1>Typography</h1>
+    </>
+  );
+}
