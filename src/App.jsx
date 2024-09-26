@@ -45,13 +45,52 @@ import Link from "./routes/UI/Link";
 import Lists from "./routes/UI/Lists";
 import Scrollspy from "./routes/UI/Scrollspy";
 import TooltipPopover from "./routes/UI/TooltipPopover";
+import Error from "./routes/Error";
+import Offcanvas from "./routes/UI/Offcanvas";
+import BasicForm from "./routes/Forms/BasicForm";
+import BootstrapSwitch from "./routes/Forms/BootstrapSwitch";
+import CheckboxAndRadios from "./routes/Forms/CheckboxAndRadios";
+import FormActions from "./routes/Forms/FormActions";
+import FormBordered from "./routes/Forms/FormBordered";
+import FormDetail from "./routes/Forms/FormDetail";
+import FormHorizontal from "./routes/Forms/FormHorizontal";
+import FormsInput from "./routes/Forms/FormsInput";
+import FormVertical from "./routes/Forms/FormVertical";
+import FormWizard from "./routes/Forms/FormWizard";
+import InputGroups from "./routes/Forms/InputGroups";
+import RowSeparator from "./routes/Forms/RowSeparator";
+import Select2 from "./routes/Forms/Select2";
+import InputGrid from "./routes/Forms/InputGrid";
+import QuillEditor from "./routes/Forms/QuillEditor";
+import BasicTable from "./routes/Tables/BasicTable";
+import Api from "./routes/Tables/API";
+import DarkBasicTable from "./routes/Tables/DarkBasicTable";
+import ColouredTable from "./routes/Tables/ColouredTable";
+import SizingTable from "./routes/Tables/SizingTable";
+import BasicInitialisation from "./routes/Tables/BasicInitialisation";
+import AdvancedInitialisation from "./routes/Tables/AdvancedInitialisation";
+import IconSolar from "./routes/Icons/IconSolar";
+import IconTabler from "./routes/Icons/IconTabler";
+// import BasicForm from "./routes/Forms/BasicForm";
+// import BootstrapSwitch from "./routes/Forms/BootstrapSwitch";
+// import CheckboxRadios from "./routes/Forms/CheckboxRadios";
+// import FormActions from "./routes/Forms/FormActions";
+// import FormBordered from "./routes/Forms/FormBordered";
+// import FormDetail from "./routes/Forms/FormDetail";
+// import FormHorizontal from "./routes/Forms/FormHorizontal";
+// import FormsInput from "./routes/Forms/FormsInput";
+// import FormVertical from "./routes/Forms/FormVertical";
+
+
 
 function App() {
   return (
     <>
       <MainLayout>
         <Router root={MainLayout}>
-          {/* home */}
+          {/* Error */}
+          <Route path="/*all" component={Error} />
+
           {/* <Route path="/" component={Home} /> */}
           <Route path="/" component={Analytical} />
           <Route path="/eCommerce" component={ECommerce} />
@@ -75,37 +114,65 @@ function App() {
           <Route path="/app/userprofile" component={UserProfile} />
 
           {/* Pages */}
-          <Route path="/Pages/accountSetting" component={AccountSetting} />
-          <Route path="/Pages/banner" component={Banner} />
-          <Route path="/Pages/card" component={Card} />
-          <Route path="/Pages/charts" component={Charts} />
-          <Route path="/Pages/FAQ" component={FAQ} />
-          <Route path="/Pages/landingPage" component={LandingPage} />
-          <Route path="/Pages/pricing" component={Pricing} />
+          <Route path="/pages/accountSetting" component={AccountSetting} />
+          <Route path="/pages/banner" component={Banner} />
+          <Route path="/pages/card" component={Card} />
+          <Route path="/pages/charts" component={Charts} />
+          <Route path="/pages/faq" component={FAQ} />
+          <Route path="/pages/landingPage" component={LandingPage} />
+          <Route path="/pages/pricing" component={Pricing} />
 
           {/* UI */}
           <Route path="/ui/buttons" component={Buttons} />
+          <Route path="/ui/offcanvas" component={Offcanvas} />
           <Route path="/ui/dropdowns" component={Dropdowns} />
           <Route path="/ui/modals" component={Modal} />
           <Route path="/ui/pagination" component={Pagination} />
-          <Route path="/ui/brogressbar" component={Progressbar} />
+          <Route path="/ui/progressbar" component={Progressbar} />
           <Route path="/ui/tabs" component={Tab} />
           <Route path="/ui/typography" component={Typography} />
           <Route path="/ui/spinner" component={Spinner} />
-          <Route path="/ui/Accordion" component={Accordion} />
-          <Route path="/ui/Badge" component={Badge} />
-          <Route path="/ui/Alerts" component={Alerts} />
-          <Route path="/ui/BootstrapUI" component={BootstrapUI} />
-          <Route path="/ui/Breadcrumb" component={Breadcrumb} />
-          <Route path="/ui/Carousel" component={Carousel} />
-          <Route path="/ui/Grid" component={Grid} />
-          <Route path="/ui/Link" component={Link} />
-          <Route path="/ui/Lists" component={Lists} />
-          <Route path="/ui/Scrollspy" component={Scrollspy} />
+          <Route path="/ui/accordion" component={Accordion} />
+          <Route path="/ui/badge" component={Badge} />
+          <Route path="/ui/notification" component={Alerts} />
+          <Route path="/ui/bootstrapUI" component={BootstrapUI} />
+          <Route path="/ui/breadcrumb" component={Breadcrumb} />
+          <Route path="/ui/carousel" component={Carousel} />
+          <Route path="/ui/grid" component={Grid} />
+          <Route path="/ui/link" component={Link} />
+          <Route path="/ui/lists" component={Lists} />
+          <Route path="/ui/scrollspy" component={Scrollspy} />
           <Route path="/ui/tooltipPopover" component={TooltipPopover} />
 
+          {/* forms */}
+          <Route path="/forms/basicForm" component={BasicForm} />
+          <Route path="/forms/bootstrapSwitch" component={BootstrapSwitch} />
+          <Route path="/forms/checkboxRadios" component={CheckboxAndRadios} />
+          <Route path="/forms/actions" component={FormActions} />
+          <Route path="/forms/bordered" component={FormBordered} />
+          <Route path="/forms/detail" component={FormDetail} />
+          <Route path="/forms/horizontal" component={FormHorizontal} />
+          <Route path="/forms/input" component={FormsInput} />
+          <Route path="/forms/vertical" component={FormVertical} />
+          <Route path="/forms/wizard" component={FormWizard} />
+          <Route path="/forms/inputGroups" component={InputGroups} />
+          <Route path="/forms/inputGrid" component={InputGrid} />
+          <Route path="/forms/rowSeparator" component={RowSeparator} />
+          <Route path="/forms/select2" component={Select2} />
+          <Route path="/forms/quillEditor" component={QuillEditor} />
 
+          {/* Tables */}
+          <Route path="/table/datatableAdvanced" component={AdvancedInitialisation} />
+          <Route path="/table/basic" component={BasicTable} />
+          <Route path="/table/darkBasic" component={DarkBasicTable} />
+          <Route path="/table/Sizing" component={SizingTable} />
+          <Route path="/table/layoutColoured" component={ColouredTable} />
+          <Route path="/table/datatableBasic" component={BasicInitialisation} />
+          <Route path="/table/datatableApi" component={Api} />
 
+          {/* Icons */}
+          <Route path="/icon/tabler" component={IconTabler} />
+          <Route path="/icon/solar" component={IconSolar} />
 
         </Router>
       </MainLayout>

@@ -50,9 +50,15 @@ import successIcon from '../assets/images/svgs/success.svg';
 import warningIcon from '../assets/images/svgs/warning.svg';
 import lightLogo from '../assets/images/logos/light-logo.svg'
 import darklLogo from '../assets/images/logos/dark-logo.svg'
-
+import ErrorIcon from "../assets/images/backgrounds/errorimg.svg";
+import blogImg2 from "../assets/images/blog/blog-img2.jpg";
+import blogImg1 from "../assets/images/blog/blog-img1.jpg";
+import blogImg3 from "../assets/images/blog/blog-img3.jpg";
 
 export {
+    blogImg3,
+    blogImg2,
+    blogImg1,
     dangerIcon,
     facebookIcon,
     googleIcon,
@@ -104,5 +110,6 @@ export {
     successIcon,
     warningIcon,
     lightLogo,
-    darklLogo
+    darklLogo,
+    ErrorIcon
 };

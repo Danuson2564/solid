@@ -17,10 +17,15 @@
   },
   "dependencies": {
     "@abp/flag-icon-css": "^8.3.0",
+    "@fullcalendar/daygrid": "^6.1.15",
+    "@fullcalendar/react": "^6.1.15",
+    "@fullcalendar/timegrid": "^6.1.15",
     "@solidjs/router": "^0.14.3",
     "@tabler/icons": "^3.16.0",
+    "bootstrap": "^5.3.3",
     "crypto-icons": "^1.0.65",
-    "jquery": "^3.2.1",
+    "jquery": "^3.7.1",
+    "quill": "^2.0.2",
     "solid-js": "^1.8.11"
   }
 }

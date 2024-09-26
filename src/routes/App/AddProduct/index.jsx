@@ -2,7 +2,7 @@ export default function AddProduct() {
     return (
       <>1
         <div class="body-wrapper">
-        <div class="container-fluid">
+        <div class="container-fluid mw-100">
           <div class="page-titles mb-7 mb-md-5">
             <div class="row">
               <div class="col-lg-8 col-md-6 col-12 align-self-center">
